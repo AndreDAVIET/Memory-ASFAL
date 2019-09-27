@@ -1,0 +1,113 @@
+@font-face
+{
+    font-family: 'southpark';
+    src: url('southpark.ttf');
+}
+
+body{
+    text-align: center;
+    width: 100%;
+    font-family: "southpark";
+    background-image: url('indexwallpaper.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  
+}
+
+a
+{
+    text-decoration: none;
+    color: black;
+}
+
+.levels img
+{
+    width: 150px;
+    height: 150px;
+}
+
+
+
+.levels img:hover
+{
+    width: 180px;
+    height: 180px;
+}
+
+.levels
+{
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    display: flex;
+    align-content: space-between;
+    justify-content: space-between;
+    height: 180px;
+}
+
+.divButtonPlay
+{
+    margin-top: 40px;
+    height: 60px;
+}
+
+.playButton
+{
+    width: 150px;
+    height: 50px;
+    font-family: "southpark";
+    font-size: 30px;
+   
+}
+
+
+.playButton:hover
+{
+    width: 200px;
+    height: 70px;
+    font-family: "southpark";
+    font-size: 35px;
+}
+
+.caracters
+{
+    margin-top: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    display: flex;
+    align-content: space-around;
+    justify-content: space-around;
+}
+
+.caracters img
+{
+    width: 150px;
+    height: auto;
+}
+
+.caracters img:hover
+{
+    width: 160px;
+    height: auto;
+}
+
+#container img{
+    width: 120px;
+}
+
+#container
+{
+    display: flex;
+    flex-direction: row;
+ width: 600px;
+ text-align: center;
+ margin: auto;
+ align-items: center;
+ flex-wrap: wrap;
+ border: 1px solid grey;
+ border-radius: 5px;
+padding: 10px;
+background-color:antiquewhite;
+}

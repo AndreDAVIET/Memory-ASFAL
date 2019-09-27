@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>South Park Memory</title>
+</head>
+<body>
+    <p><h2>PLAAAAAAAAAAAAAAAAY !</h2></p>
+    <div id="score"> <h2> SCORE : 0 </h2></div>
+    <div id="container">
+
+    </div>
+    
+
+    <script>
+        const backCard = ['cardBack.png'];
+        const frontCards = [
+            'card1.png',
+            'card2.png',
+            'card3.png',
+            'card4.png',
+            'card5.png',
+            'card6.png',
+            'card7.png',
+            'card8.png',
+            'card9.png',
+            'card10.png',
+            'card1.png',
+            'card2.png',
+            'card3.png',
+            'card4.png',
+            'card5.png',
+            'card6.png',
+            'card7.png',
+            'card8.png',
+            'card9.png',
+            'card10.png',
+        ]
+
+        let showCard = document.getElementById('container');
+        let returnedCards = [];
+        let evenFinded = 0;
+        let score = 0;
+    
+
+          function onClickedCard(index)
+        {
+            let backElt = document.getElementById(`back-${index}`);
+            let frontElt = document.getElementById(`front-${index}`);
+            backElt.style.display = "none";
+            frontElt.style.display = "block";
+
+           
+           if (returnedCards.length < 2)
+           {
+            
+           
+            returnedCards.push(frontCards[index]);
+           }
+            if (returnedCards.length === 2)
+            {
+                
+                if (returnedCards[0] === returnedCards[1])
+                {
+                    
+                    score = score +1;
+                    returnedCards = [];
+                    frontElt.style.display = "block";
+                    
+                }
+                
+                    else 
+                    {
+                        backElt.style.display = "block";
+                    frontElt.style.display = "none";
+                    returnedCards = [];
+                    }
+                   
+            }
+                        
+                
+             
+            let scoreElt = document.getElementById('score');
+            scoreElt.innerHTML = `<h2> SCORE : ${score} </h2>`;
+            console.log(score);
+            console.log(frontCards[index]);
+            console.log(returnedCards);
+            console.log(index1, index2);
+        
+        
+           
+        }
+        
+       
+       
+
+        for (i = 0; i < frontCards.length; i ++)
+        {
+            showCard.innerHTML += `<img id="front-${i}" src="${frontCards[i]}" style="display: none"/>`;
+            showCard.innerHTML += `<img onclick = "setTimeout(onClickedCard(${i}), 3000)" id="back-${i}" src="${backCard[0]}" style="display: block"/>`;
+
+        }
+       
+    </script>
+</body>
+</html>
