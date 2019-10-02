@@ -70,7 +70,6 @@
         let evenFinded = 0;
         let scoreJ1 = 0;
         let scoreJ2 = 0
-        let total = (scoreJ1 + scoreJ2 )
 
 
         
@@ -95,6 +94,7 @@
    
           function onClickedCard(index)
         {
+
             let backElt = document.getElementById(`back-${index}`);
             let frontElt = document.getElementById(`front-${index}`);
             backElt.style.display = "none";
@@ -116,16 +116,13 @@
                                 mySound1.play();
                     scoreJ1 = scoreJ1 +1;
                     returnedCards = [];
-                    evenFinded = evenFinded + 1;
                     frontElt.style.display = "block";
-                    console.log(total);
                     }
                     else{
                         let mySound2 = new Audio(`audio/audio${index}.mp3`);
                                 mySound2.play();
                     scoreJ2 = scoreJ2 +1;
                     returnedCards = [];
-                    evenFinded = evenFinded + 1;
                     frontElt.style.display = "block";
 
                     }
@@ -172,67 +169,6 @@
             
             }    
 
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             let scoreJ1Elt = document.getElementById('scoreJ1');
             let scoreJ2Elt = document.getElementById('scoreJ2');           
             scoreJ1Elt.innerHTML = `<h2> SCORE Joueur 1 : ${scoreJ1} </h2>`;
@@ -240,12 +176,35 @@
             console.log(scoreJ1);
             console.log(frontCards[index]);
             console.log(returnedCards);
-        
+            if(scoreJ1+scoreJ2 == 10)
+          {
+              if(scoreJ1 < scoreJ2)
+              {
+                  function RedirectionJ2(){
+                        document.location.href="j2.html"; 
+                    }
+                    RedirectionJ2();
+              }
+              else if (scoreJ1 > scoreJ2)
+              {
+                function RedirectionJ2(){
+                        document.location.href="j1.html"; 
+                    }
+                    RedirectionJ2();
+              } else
+              {
+                function Redirection(){
+                        document.location.href="matchnul.html"; 
+                    }
+                    Redirection();
+              }
+          }
         
            
         }
         
-          
+       
+         
        
 
         for (i = 0; i < frontCards.length; i ++)
@@ -255,18 +214,7 @@
 
         }
 
-/*if( total === 10){
-      if ( scoreJ1 > 5){
-        alert("Bravo J1");    
-      }
-      if ( scoreJ1 === 5){
-        alert("Egalite");    
-      }
-      if ( scoreJ2 > 5){
-        alert("Bravo J2");    
-      }
-}
-*/
+
     
     </script>
 </body>
