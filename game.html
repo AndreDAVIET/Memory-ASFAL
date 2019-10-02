@@ -22,13 +22,13 @@
 
             <div class="photoPlayer">
                 <h2> SCORE asshole : <span id="scoreJ2">0</span> </h2>
-                <img id="marine" src="marine.png" alt="kim le fils de pute" style="width:55%">
+                <img id="marine" src="marine.png" alt="kim mon amour" style="width:55%">
             
             </div>
             <aside id='modal1' class='modal' style="display: none">
                     <div class='modal-wrapper'>
-                        <p> Joueur Suivant ! </p>
-                        <button id="js-close-modal" onclick="closeModaleJ1()"> J'ai compris caca !
+                        <p id="playerName">Kim Jong Il, FIGHT ! </p>
+                        <button id="js-close-modal" onclick="closeModaleJ1()"> OK
                         </button>
                     </div>
             
@@ -98,7 +98,15 @@
 
         function fenetreModaleJ1(){
             let modaleJ1 = document.getElementById('modal1');
-            modaleJ1.style.display="block";
+            if(joueurEtat === true)
+            {   
+                document.getElementById('playerName').innerHTML = `<p id="playerName">Kim DickHead, FIGHT ! </p>`;
+                modaleJ1.style.display="block";
+            } else{
+                document.getElementById('playerName').innerHTML = `<p id="playerName">Marine asshole, FIGHT ! </p>`;
+                modaleJ1.style.display="block";
+            }
+            
         }
 
         function closeModaleJ1 (){
