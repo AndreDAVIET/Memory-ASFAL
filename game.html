@@ -62,6 +62,9 @@
             'Img/card10.png',
         ]
 
+          shuffle(frontCards);
+
+
         let showCard = document.getElementById('container');
         let returnedCards = [];
         let joueurEtat = true;
@@ -78,6 +81,15 @@
         function myFunctionJ2() {
             alert("Joueur 2, A toi de jouer !");
             }
+
+              function shuffle(frontCards) 
+        {
+            for (let i = frontCards.length - 1; i > 0; i--) {
+                let j = Math.floor(Math.random() * (i + 1)); 
+                [frontCards[i], frontCards[j]] = [frontCards[j], frontCards[i]];
+            }
+        }
+
 
 
             myFunctionJ1(); 
@@ -101,6 +113,8 @@
                 if (returnedCards[0] === returnedCards[1])
                 {
                     if (joueurEtat === true){
+                        let mySound1 = new Audio(`audio/audio${index}.mp3`);
+                                mySound1.play();
                     scoreJ1 = scoreJ1 +1;
                     returnedCards = [];
                     evenFinded = evenFinded + 1;
@@ -108,6 +122,8 @@
                     console.log(total);
                     }
                     else{
+                        let mySound2 = new Audio(`audio/audio${index}.mp3`);
+                                mySound2.play();
                     scoreJ2 = scoreJ2 +1;
                     returnedCards = [];
                     evenFinded = evenFinded + 1;
