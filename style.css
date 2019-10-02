@@ -22,11 +22,6 @@ aside p {
 aside button {
     margin-top: 100px;
 }
-
-
-
-
-
 /* Autre */
 
 
@@ -125,6 +120,29 @@ a
     padding-top: 10%;
 }
 
+.caracters{
+    width: 100%;
+display: flex;
+flex-direction: row;
+justify-content: space-evenly;
+margin-top: 10%;
+}
+
+#kimIndex{
+    width: 19%;
+    border: black solid;
+    border-radius: 15%;
+    background-color: #92D7E6;
+
+}
+
+#marineIndex{
+    width: 17%;
+    border: black solid;
+    border-radius: 15%;
+    padding-top: 3.5%;
+    background-color: #92D7E6;
+}
 
 #container
 {
