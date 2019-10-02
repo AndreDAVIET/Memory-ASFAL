@@ -105,15 +105,16 @@ a
 }
 
 
-.playButton:hover
+.caracters
 {
-    width: 200px;
-    height: 70px;
-    font-family: "southpark";
-    font-size: 35px;
+    margin-top: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    display: flex;
+    align-content: space-around;
+    justify-content: space-around;
 }
-
-
 
 #container img{
     width: 120px;
@@ -166,6 +167,13 @@ margin-top: 10%;
     height: 120px;
     width: 120px;
     border-radius: 50%;
+}
+
+.imgFinales{ 
+    margin-top: 200px; 
+    margin-left: 0;
+    margin-right: 0;
+}
     cursor:url("middle.png"), auto; 
     /*cursor:url(penis.cur), auto;*/
 }
