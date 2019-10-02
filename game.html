@@ -9,14 +9,35 @@
 </head>
 <body>
     <p><h2>PLAAAAAAAAAAAAAAAAY !</h2></p>
-    <div id="score"> <h2> SCORE : 0 </h2></div>
+    <div id="scoreJ1"> <h2> SCORE Joueur 1 : 0 </h2></div>
+    <div id="scoreJ2"> <h2> SCORE Joueur 2 : 0 </h2></div>
     <div id="container">
 
     </div>
     
 
     <script>
-        const backCard = ['Img/cardBack.png'];
+        const backCard = ['ImageAigle/card1.jpg',
+                        'ImageAigle/card2.jpg',
+                        'ImageAigle/card3.jpg',    
+                        'ImageAigle/card4.jpg',
+                        'ImageAigle/card5.jpg',
+                        'ImageAigle/card6.jpg',
+                        'ImageAigle/card7.jpg',
+                        'ImageAigle/card8.jpg',
+                        'ImageAigle/card9.jpg',
+                        'ImageAigle/card10.jpg',
+                        'ImageAigle/card11.jpg',
+                        'ImageAigle/card12.jpg',
+                        'ImageAigle/card13.jpg',
+                        'ImageAigle/card14.jpg',
+                        'ImageAigle/card15.jpg',
+                        'ImageAigle/card16.jpg',
+                        'ImageAigle/card17.jpg',
+                        'ImageAigle/card18.jpg',
+                        'ImageAigle/card19.jpg',
+                        'ImageAigle/card20.jpg',
+        ];
         const frontCards = [
             'Img/card1.png',
             'Img/card2.png',
@@ -40,12 +61,38 @@
             'Img/card10.png',
         ]
 
+          shuffle(frontCards);
+
+
         let showCard = document.getElementById('container');
         let returnedCards = [];
+        let joueurEtat = true;
         let evenFinded = 0;
-        let score = 0;
-    
+        let scoreJ1 = 0;
+        let scoreJ2 = 0
+        let total = (scoreJ1 + scoreJ2 )
 
+
+        
+        function myFunctionJ1() {
+             alert("Joueur 1, A toi de jouer !");
+            }
+        function myFunctionJ2() {
+            alert("Joueur 2, A toi de jouer !");
+            }
+
+              function shuffle(frontCards) 
+        {
+            for (let i = frontCards.length - 1; i > 0; i--) {
+                let j = Math.floor(Math.random() * (i + 1)); 
+                [frontCards[i], frontCards[j]] = [frontCards[j], frontCards[i]];
+            }
+        }
+
+
+
+            myFunctionJ1(); 
+   
           function onClickedCard(index)
         {
             let backElt = document.getElementById(`back-${index}`);
@@ -53,7 +100,6 @@
             backElt.style.display = "none";
             frontElt.style.display = "block";
 
-           
            if (returnedCards.length < 2)
            {
             
@@ -65,45 +111,163 @@
                 
                 if (returnedCards[0] === returnedCards[1])
                 {
-                    
-                    score = score +1;
+                    if (joueurEtat === true){
+                        let mySound1 = new Audio(`audio/audio${index}.mp3`);
+                                mySound1.play();
+                    scoreJ1 = scoreJ1 +1;
                     returnedCards = [];
+                    evenFinded = evenFinded + 1;
                     frontElt.style.display = "block";
-                    
+                    console.log(total);
+                    }
+                    else{
+                        let mySound2 = new Audio(`audio/audio${index}.mp3`);
+                                mySound2.play();
+                    scoreJ2 = scoreJ2 +1;
+                    returnedCards = [];
+                    evenFinded = evenFinded + 1;
+                    frontElt.style.display = "block";
+
+                    }
                 }
                 
                     else 
                     {
+                        setTimeout(test,750)
+                        function test(){
                         backElt.style.display = "block";
-                    frontElt.style.display = "none";
-                    returnedCards = [];
-                    }
-                   
-            }
+                        frontElt.style.display = "none";
+                        }
+
+
+                        for (let j = 0; j < frontCards.length; j++){
+
+                            if (returnedCards[0]==frontCards[j]){
+
+                                setTimeout(test3,750)
+                                function test3(){
+                                let test1 = document.getElementById(`front-${j}`);
+                                let test2 = document.getElementById(`back-${j}`);
+                                test1.style.display = "none";
+                                test2.style.display = "block";
+                                returnedCards = [];     
+                            }
+                            }
+
+                        }
+                        if (joueurEtat === true){
+                            joueurEtat = false;
+                            setTimeout(myFunctionJ2,500);
+                            console.log(joueurEtat);
+                        }
                         
-                
-             
-            let scoreElt = document.getElementById('score');
-            scoreElt.innerHTML = `<h2> SCORE : ${score} </h2>`;
-            console.log(score);
+                        else{
+                            joueurEtat = true;
+                            setTimeout(myFunctionJ1,500);
+                            console.log(joueurEtat);
+                        }
+
+                        
+            }
+            
+            }    
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            let scoreJ1Elt = document.getElementById('scoreJ1');
+            let scoreJ2Elt = document.getElementById('scoreJ2');           
+            scoreJ1Elt.innerHTML = `<h2> SCORE Joueur 1 : ${scoreJ1} </h2>`;
+            scoreJ2Elt.innerHTML = `<h2> SCORE Joueur 2 : ${scoreJ2} </h2>`;
+            console.log(scoreJ1);
             console.log(frontCards[index]);
             console.log(returnedCards);
-            console.log(index1, index2);
         
         
            
         }
         
-       
+          
        
 
         for (i = 0; i < frontCards.length; i ++)
         {
             showCard.innerHTML += `<img id="front-${i}" src="${frontCards[i]}" style="display: none"/>`;
-            showCard.innerHTML += `<img onclick = "setTimeout(onClickedCard(${i}), 3000)" id="back-${i}" src="${backCard[0]}" style="display: block"/>`;
+            showCard.innerHTML += `<img onclick = "setTimeout(onClickedCard(${i}), 3000)" id="back-${i}" src="${backCard[i]}" style="display: block" class='imgDure'/>`;
 
         }
-       
+
+/*if( total === 10){
+      if ( scoreJ1 > 5){
+        alert("Bravo J1");    
+      }
+      if ( scoreJ1 === 5){
+        alert("Egalite");    
+      }
+      if ( scoreJ2 > 5){
+        alert("Bravo J2");    
+      }
+}
+*/
+    
     </script>
 </body>
 </html>
