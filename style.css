@@ -62,14 +62,6 @@ a
 }
 
 
-.playButton:hover
-{
-    width: 200px;
-    height: 70px;
-    font-family: "southpark";
-    font-size: 35px;
-}
-
 .caracters
 {
     margin-top: 60px;
@@ -116,4 +108,10 @@ background-color:antiquewhite;
     height: 120px;
     width: 120px;
     border-radius: 50%;
+}
+
+.imgFinales{ 
+    margin-top: 200px; 
+    margin-left: 0;
+    margin-right: 0;
 }
