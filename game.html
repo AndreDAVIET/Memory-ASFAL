@@ -125,6 +125,7 @@
    
         function onClickedCard(index)
         {
+
             let backElt = document.getElementById(`back-${index}`);
             let frontElt = document.getElementById(`front-${index}`);
             backElt.style.display = "none";
@@ -213,7 +214,37 @@
             console.log(scoreJ1);
             console.log(frontCards[index]);
             console.log(returnedCards);
+            
+            if(scoreJ1+scoreJ2 == 10)
+             {
+              if(scoreJ1 < scoreJ2)
+                {
+                  function RedirectionJ2(){
+                        document.location.href="j2.html"; 
+                    }
+                    RedirectionJ2();
+                }
+              else if (scoreJ1 > scoreJ2)
+                {
+                function RedirectionJ2(){
+                        document.location.href="j1.html"; 
+                    }
+                    RedirectionJ2();
+                } else
+                    {
+                        function Redirection(){
+                        document.location.href="matchnul.html"; 
+                    }
+                    Redirection();
+              }
+          }
+        
+           
         }
+        
+       
+         
+       
 
         for (i = 0; i < frontCards.length; i ++)
         {
@@ -221,22 +252,6 @@
             showCard.innerHTML += `<img onclick = "setTimeout(onClickedCard(${i}), 3000)" id="back-${i}" src="${backCard[i]}" style="display: block" class='imgDure'/>`;
 
         }
-
-/*if( total === 10){
-      if ( scoreJ1 > 5){
-        alert("Bravo J1");    
-      }
-      if ( scoreJ1 === 5){
-        alert("Egalite");    
-      }
-      if ( scoreJ2 > 5){
-        alert("Bravo J2");    
-      }
-}
-*/
-
-
-
     </script>
 </body>
 </html>
