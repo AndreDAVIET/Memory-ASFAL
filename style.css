@@ -26,11 +26,6 @@ aside button {
     font-family: "southpark";
     font-size: 30px;
 }
-
-
-
-
-
 /* Autre */
 
 
@@ -129,6 +124,29 @@ a
     padding-top: 10%;
 }
 
+.caracters{
+    width: 100%;
+display: flex;
+flex-direction: row;
+justify-content: space-evenly;
+margin-top: 10%;
+}
+
+#kimIndex{
+    width: 19%;
+    border: black solid;
+    border-radius: 15%;
+    background-color: #92D7E6;
+
+}
+
+#marineIndex{
+    width: 17%;
+    border: black solid;
+    border-radius: 15%;
+    padding-top: 3.5%;
+    background-color: #92D7E6;
+}
 
 #container
 {
@@ -148,4 +166,8 @@ a
     height: 120px;
     width: 120px;
     border-radius: 50%;
+}
+img{     
+    cursor:url("https://lh3.googleusercontent.com/xIXO5YU0WWM3wlfAz09I9hNBBNGhb6Owiy1Agkav4JNOJZX26wxMz8kLqerpU5o5yreXZdjz=w128-h128-e365"), auto; 
+    /*cursor:url(penis.cur), auto;*/
 }
