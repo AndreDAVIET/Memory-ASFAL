@@ -106,10 +106,9 @@ a
  margin: auto;
  align-items: center;
  flex-wrap: wrap;
- border: 1px solid grey;
  border-radius: 5px;
 padding: 10px;
-background-color:antiquewhite;
+background-color: rgba(66, 126, 66, 0);
 }
 
 .imgDure{
