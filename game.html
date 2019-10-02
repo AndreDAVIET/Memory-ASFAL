@@ -61,6 +61,9 @@
             'Img/card10.png',
         ]
 
+          shuffle(frontCards);
+
+
         let showCard = document.getElementById('container');
         let returnedCards = [];
         let joueurEtat = true;
@@ -77,6 +80,15 @@
         function myFunctionJ2() {
             alert("Joueur 2, A toi de jouer !");
             }
+
+              function shuffle(frontCards) 
+        {
+            for (let i = frontCards.length - 1; i > 0; i--) {
+                let j = Math.floor(Math.random() * (i + 1)); 
+                [frontCards[i], frontCards[j]] = [frontCards[j], frontCards[i]];
+            }
+        }
+
 
 
             myFunctionJ1(); 
