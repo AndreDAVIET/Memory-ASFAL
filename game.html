@@ -8,42 +8,34 @@
     <title>South Park Memory</title>
 </head>
 <body>
-
     <h1>PLAAAAAAAAAAAAAAAAY !</h1>
-
-    
-    <div id="scoreJ1"> <h2> SCORE Joueur 1 : 0 </h2></div>
-    <div id="scoreJ2"> <h2> SCORE Joueur 2 : 0 </h2></div>
-    <aside id='modal1' class='modal' style="display: none">
-        <div class='modal-wrapper'>
-            <p> Joueur Suivant ! </p>
-            <button id="js-close-modal" onclick="closeModaleJ1()"> J'ai compris caca !
-            </button>
-        </div>
-
-    </aside>
-    <div id="container">
-
 
     <div id="bigContainer">
 
-            <div id="scoreJ1" > <h2> SCORE dickhead 1 : 0 </h2>
+            <div class="photoPlayer">
+                 <h2> SCORE dickhead : <span id="scoreJ1">0</span> </h2>
                 <img id="kim" src="kimCadre.png" alt="kim le fils de pute" style="width:55%">
             
             </div>
             
             <div id="container"></div>
 
-            <div id="scoreJ2"> <h2> SCORE asshole 2 : 0 </h2>
+            <div class="photoPlayer">
+                <h2> SCORE asshole : <span id="scoreJ2">0</span> </h2>
                 <img id="marine" src="marine.png" alt="kim le fils de pute" style="width:55%">
             
             </div>
+            <aside id='modal1' class='modal' style="display: none">
+                    <div class='modal-wrapper'>
+                        <p> Joueur Suivant ! </p>
+                        <button id="js-close-modal" onclick="closeModaleJ1()"> J'ai compris caca !
+                        </button>
+                    </div>
             
+            </aside>
             
     </div>
     
-
-
     <script>
         const backCard = ['ImageAigle/card1.jpg',
                         'ImageAigle/card2.jpg',
@@ -99,8 +91,8 @@
         let joueurEtat = true;
         let evenFinded = 0;
         let scoreJ1 = 0;
-        let scoreJ2 = 0
-        let total = (scoreJ1 + scoreJ2 )
+        let scoreJ2 = 0;
+        let total = scoreJ1 + scoreJ2;
 
         function fenetreModaleJ1(){
             let modaleJ1 = document.getElementById('modal1');
@@ -112,18 +104,14 @@
          modaleJ1Close.style.display="none";
         }
 
-
-
-
-
         function myFunctionJ1() {
              alert("Joueur 1, A toi de jouer !");
             }
         function myFunctionJ2() {
             alert("Joueur 2, A toi de jouer !");
-            }
+        }
 
-              function shuffle(frontCards) 
+        function shuffle(frontCards) 
         {
             for (let i = frontCards.length - 1; i > 0; i--) {
                 let j = Math.floor(Math.random() * (i + 1)); 
@@ -133,9 +121,9 @@
 
 
 
-            fenetreModaleJ1()
+        fenetreModaleJ1()
    
-          function onClickedCard(index)
+        function onClickedCard(index)
         {
             let backElt = document.getElementById(`back-${index}`);
             let frontElt = document.getElementById(`front-${index}`);
@@ -145,10 +133,9 @@
 
            if (returnedCards.length < 2)
            {
-            
-           
-            returnedCards.push(frontCards[index]);
+                returnedCards.push(frontCards[index]);
            }
+
             if (returnedCards.length === 2)
             {
                 
@@ -156,92 +143,77 @@
                 {
                     if (joueurEtat === true){
                         let mySound1 = new Audio(`veryGood.mp3`);
-                                mySound1.play();
-                    scoreJ1 = scoreJ1 +1;
-                    returnedCards = [];
-                    evenFinded = evenFinded + 1;
-                    frontElt.style.display = "block";
-                    console.log(total);
+                        mySound1.play();
+                        scoreJ1 = scoreJ1 +1;
+                        returnedCards = [];
+                        evenFinded = evenFinded + 1;
+                        frontElt.style.display = "block";
+                        console.log(total);
                     }
-                    else{
+                    else {
 
                         let mySound1 = new Audio(`veryGood.mp3`);
-                                mySound1.play();
+                        mySound1.play();
                         
-                    scoreJ2 = scoreJ2 +1;
-                    returnedCards = [];
-                    evenFinded = evenFinded + 1;
-                    frontElt.style.display = "block";
+                        scoreJ2 = scoreJ2 +1;
+                        returnedCards = [];
+                        evenFinded = evenFinded + 1;
+                        frontElt.style.display = "block";
 
                     }
                 }
                 
                     else 
                     {   let mySound2 = new Audio('tryAgain.mp3');
-                                mySound2.play();
+                         mySound2.play();
                         setTimeout(test,750)
                         function test(){
                         backElt.style.display = "block";
                         frontElt.style.display = "none";
-                        }
+                    }
 
 
-                        for (let j = 0; j < frontCards.length; j++){
+                    for (let j = 0; j < frontCards.length; j++){
 
-                            if (returnedCards[0]==frontCards[j]){
+                        if (returnedCards[0]==frontCards[j]){
 
-                                setTimeout(test3,750)
-                                function test3(){
+                            setTimeout(test3,750)
+                            function test3(){
                                 let test1 = document.getElementById(`front-${j}`);
                                 let test2 = document.getElementById(`back-${j}`);
                                 test1.style.display = "none";
                                 test2.style.display = "block";
                                 returnedCards = [];     
                             }
-                            }
-
-                        }
-                        if (joueurEtat === true){
-                            joueurEtat = false;
-                            setTimeout(fenetreModaleJ1,500);
-                            setTimeout(closeModaleJ1,2000);
-                            console.log(joueurEtat);
-                        }
-                        
-                        else{
-                            joueurEtat = true;
-                            setTimeout(fenetreModaleJ1,500);
-                            setTimeout(closeModaleJ1,2000);
-                            console.log(joueurEtat);
                         }
 
-                        
-            }
+                    }
+
+                    if (joueurEtat === true){
+                        joueurEtat = false;
+                        setTimeout(fenetreModaleJ1,500);
+                        setTimeout(closeModaleJ1,2000);
+                        console.log(joueurEtat);
+                    }
+                    
+                    else {
+                        joueurEtat = true;
+                        setTimeout(fenetreModaleJ1,500);
+                        setTimeout(closeModaleJ1,2000);
+                        console.log(joueurEtat);
+                    }
+                }
             
             }    
 
-        
-
-
-
-
-
-
-
             let scoreJ1Elt = document.getElementById('scoreJ1');
             let scoreJ2Elt = document.getElementById('scoreJ2');           
-            scoreJ1Elt.innerHTML = `<h2> SCORE Joueur 1 : ${scoreJ1} </h2>`;
-            scoreJ2Elt.innerHTML = `<h2> SCORE Joueur 2 : ${scoreJ2} </h2>`;
+            scoreJ1Elt.innerHTML = `${scoreJ1}`;
+            scoreJ2Elt.innerHTML = `${scoreJ2}`;
             console.log(scoreJ1);
             console.log(frontCards[index]);
             console.log(returnedCards);
-        
-        
-           
         }
-        
-          
-       
 
         for (i = 0; i < frontCards.length; i ++)
         {
