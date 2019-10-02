@@ -258,7 +258,7 @@
 
         for (i = 0; i < frontCards.length; i ++)
         {
-            showCard.innerHTML += `<img id="front-${i}" src="${frontCards[i]}" style="display: none"/>`;
+            showCard.innerHTML += `<img id="front-${i}" src="${frontCards[i]}" style="display: none" class='imgDure'/>`;
             showCard.innerHTML += `<img onclick = "setTimeout(onClickedCard(${i}), 3000)" id="back-${i}" src="${backCard[i]}" style="display: block" class='imgDure'/>`;
 
         }
