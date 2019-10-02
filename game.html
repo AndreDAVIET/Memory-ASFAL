@@ -61,6 +61,8 @@
             'Img/card10.png',
         ]
 
+        
+
           shuffle(frontCards);
 
 
@@ -112,7 +114,7 @@
                 if (returnedCards[0] === returnedCards[1])
                 {
                     if (joueurEtat === true){
-                        let mySound1 = new Audio(`audio/audio${index}.mp3`);
+                        let mySound1 = new Audio(`veryGood.mp3`);
                                 mySound1.play();
                     scoreJ1 = scoreJ1 +1;
                     returnedCards = [];
@@ -121,8 +123,7 @@
                     console.log(total);
                     }
                     else{
-                        let mySound2 = new Audio(`audio/audio${index}.mp3`);
-                                mySound2.play();
+                        
                     scoreJ2 = scoreJ2 +1;
                     returnedCards = [];
                     evenFinded = evenFinded + 1;
@@ -132,7 +133,8 @@
                 }
                 
                     else 
-                    {
+                    {   let mySound2 = new Audio('tryAgain.mp3');
+                                mySound2.play();
                         setTimeout(test,750)
                         function test(){
                         backElt.style.display = "block";
