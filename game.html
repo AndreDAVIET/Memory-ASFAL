@@ -11,6 +11,14 @@
     <p><h2>PLAAAAAAAAAAAAAAAAY !</h2></p>
     <div id="scoreJ1"> <h2> SCORE Joueur 1 : 0 </h2></div>
     <div id="scoreJ2"> <h2> SCORE Joueur 2 : 0 </h2></div>
+    <aside id='modal1' class='modal' style="display: none">
+        <div class='modal-wrapper'>
+            <p> Joueur Suivant ! </p>
+            <button id="js-close-modal" onclick="closeModaleJ1()"> J'ai compris caca !
+            </button>
+        </div>
+
+    </aside>
     <div id="container">
 
     </div>
@@ -73,8 +81,20 @@
         let scoreJ2 = 0
         let total = (scoreJ1 + scoreJ2 )
 
+        function fenetreModaleJ1(){
+            let modaleJ1 = document.getElementById('modal1');
+            modaleJ1.style.display="block";
+        }
 
-        
+        function closeModaleJ1 (){
+         let modaleJ1Close = document.getElementById('modal1');
+         modaleJ1Close.style.display="none";
+        }
+
+
+
+
+
         function myFunctionJ1() {
              alert("Joueur 1, A toi de jouer !");
             }
@@ -92,7 +112,7 @@
 
 
 
-            myFunctionJ1(); 
+            fenetreModaleJ1()
    
           function onClickedCard(index)
         {
@@ -158,13 +178,15 @@
                         }
                         if (joueurEtat === true){
                             joueurEtat = false;
-                            setTimeout(myFunctionJ2,500);
+                            setTimeout(fenetreModaleJ1,500);
+                            setTimeout(closeModaleJ1,2000);
                             console.log(joueurEtat);
                         }
                         
                         else{
                             joueurEtat = true;
-                            setTimeout(myFunctionJ1,500);
+                            setTimeout(fenetreModaleJ1,500);
+                            setTimeout(closeModaleJ1,2000);
                             console.log(joueurEtat);
                         }
 
@@ -174,59 +196,6 @@
             }    
 
         
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -268,7 +237,9 @@
       }
 }
 */
-    
+
+
+
     </script>
 </body>
 </html>
