@@ -8,7 +8,10 @@
     <title>South Park Memory</title>
 </head>
 <body>
-    <p><h2>PLAAAAAAAAAAAAAAAAY !</h2></p>
+
+    <h1>PLAAAAAAAAAAAAAAAAY !</h1>
+
+    
     <div id="scoreJ1"> <h2> SCORE Joueur 1 : 0 </h2></div>
     <div id="scoreJ2"> <h2> SCORE Joueur 2 : 0 </h2></div>
     <aside id='modal1' class='modal' style="display: none">
@@ -21,9 +24,25 @@
     </aside>
     <div id="container">
 
+
+    <div id="bigContainer">
+
+            <div id="scoreJ1" > <h2> SCORE dickhead 1 : 0 </h2>
+                <img id="kim" src="kimCadre.png" alt="kim le fils de pute" style="width:55%">
+            
+            </div>
+            
+            <div id="container"></div>
+
+            <div id="scoreJ2"> <h2> SCORE asshole 2 : 0 </h2>
+                <img id="marine" src="marine.png" alt="kim le fils de pute" style="width:55%">
+            
+            </div>
+            
+            
     </div>
     
-    
+
 
     <script>
         const backCard = ['ImageAigle/card1.jpg',
@@ -123,6 +142,7 @@
             backElt.style.display = "none";
             frontElt.style.display = "block";
 
+
            if (returnedCards.length < 2)
            {
             
@@ -144,6 +164,9 @@
                     console.log(total);
                     }
                     else{
+
+                        let mySound1 = new Audio(`veryGood.mp3`);
+                                mySound1.play();
                         
                     scoreJ2 = scoreJ2 +1;
                     returnedCards = [];
