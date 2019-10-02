@@ -112,6 +112,8 @@
                 if (returnedCards[0] === returnedCards[1])
                 {
                     if (joueurEtat === true){
+                        let mySound1 = new Audio(`audio/audio${index}.mp3`);
+                                mySound1.play();
                     scoreJ1 = scoreJ1 +1;
                     returnedCards = [];
                     evenFinded = evenFinded + 1;
@@ -119,6 +121,8 @@
                     console.log(total);
                     }
                     else{
+                        let mySound2 = new Audio(`audio/audio${index}.mp3`);
+                                mySound2.play();
                     scoreJ2 = scoreJ2 +1;
                     returnedCards = [];
                     evenFinded = evenFinded + 1;
