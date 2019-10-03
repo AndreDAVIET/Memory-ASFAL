@@ -54,6 +54,7 @@ body{
 
 #bigContainer{
     display: flex;
+    justify-content: space-between;
 
 }
 
@@ -98,7 +99,7 @@ a
 .playButton
 {
     width: 150px;
-    height: 50px;
+    height: 75px;
     font-family: "southpark";
     font-size: 30px;
    
@@ -123,6 +124,14 @@ a
 .photoPlayer{
     width: 28.5%;
     padding-top: 10%;
+}
+
+#kim{
+    width: 50%;
+}
+
+#marine{
+    width: 50%;
 }
 
 .caracters{
