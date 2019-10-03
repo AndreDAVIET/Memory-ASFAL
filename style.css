@@ -180,7 +180,31 @@ margin-top: 10%;
 }
 
 .imgFinales{ 
-    margin-top: 200px; 
+    margin-top: 140px; 
     margin-left: 0;
     margin-right: 0;
+}
+
+#kimikimi{
+
+    border: solid black;
+    border-radius: 20px;
+    margin-top: 5%;
+    background-color: rgba(255, 255, 255, 0.47);
+}
+
+#penipeni{
+
+    border: solid black;
+    border-radius: 20px;
+    margin-top: 5%;
+    background-color: rgba(255, 255, 255, 0.47);
+}
+
+#bothShit{
+    border: solid black;
+    border-radius: 20px;
+    margin-top: 5%;
+    background-color: rgba(255, 255, 255, 0.47);
+
 }
