@@ -13,7 +13,7 @@
     <div id="bigContainer">
 
             <div class="photoPlayer">
-                 <h2> SCORE dickhead : <span id="scoreJ1">0</span> </h2>
+                 <h2> SCORE Joueur 1 : <span id="scoreJ1">0</span> </h2>
                 <img id="kim" src="kimCadre.png" alt="kim le fils de pute">
             
             </div>
@@ -22,13 +22,13 @@
 
 
             <div class="photoPlayer">
-                <h2> SCORE asshole : <span id="scoreJ2">0</span> </h2>
+                <h2> SCORE Joueur 2 : <span id="scoreJ2">0</span> </h2>
                 <img id="marine" src="marine.png" alt="kim mon amour">
             
             </div>
             <aside id='modal1' class='modal' style="display: none">
                     <div class='modal-wrapper'>
-                        <p id="playerName">Kim Jong Il, FIGHT ! </p>
+                        <p id="playerName">Joueur 1, FIGHT ! </p>
                         <button id="js-close-modal" onclick="closeModaleJ1()"> OK
                         </button>
                     </div>
@@ -82,10 +82,10 @@
             let modaleJ1 = document.getElementById('modal1');
             if(joueurEtat === true)
             {   
-                document.getElementById('playerName').innerHTML = `<p id="playerName">Kim DickHead, </br></br> FIGHT ! </p>`;
+                document.getElementById('playerName').innerHTML = `<p id="playerName">Joueur 1, </br></br> FIGHT ! </p>`;
                 modaleJ1.style.display="block";
             } else{
-                document.getElementById('playerName').innerHTML = `<p id="playerName">Marine asshole, </br></br> FIGHT ! </p>`;
+                document.getElementById('playerName').innerHTML = `<p id="playerName">Joueur 2, </br></br> FIGHT ! </p>`;
                 modaleJ1.style.display="block";
             }
             
