@@ -13,21 +13,21 @@
     <div id="bigContainer">
 
             <div class="photoPlayer">
-                 <h2> SCORE dickhead : <span id="scoreJ1">0</span> </h2>
-                <img id="kim" src="kimCadre.png" alt="kim le fils de pute" style="width:55%">
+                 <h2> SCORE : <span id="scoreJ1">0</span> </h2>
+                <img id="kim" src="kimCadre.png" alt="kimCadre" style="width:55%">
             
             </div>
             
             <div id="container"></div>
 
             <div class="photoPlayer">
-                <h2> SCORE asshole : <span id="scoreJ2">0</span> </h2>
-                <img id="marine" src="marine.png" alt="kim mon amour" style="width:55%">
+                <h2> SCORE : <span id="scoreJ2">0</span> </h2>
+                <img id="marine" src="marine.png" alt="kimPhoto" style="width:55%">
             
             </div>
             <aside id='modal1' class='modal' style="display: none">
                     <div class='modal-wrapper'>
-                        <p id="playerName">Kim Jong Il, FIGHT ! </p>
+                        <p id="playerName">Player 1, FIGHT ! </p>
                         <button id="js-close-modal" onclick="closeModaleJ1()"> OK
                         </button>
                     </div>
@@ -100,10 +100,10 @@
             let modaleJ1 = document.getElementById('modal1');
             if(joueurEtat === true)
             {   
-                document.getElementById('playerName').innerHTML = `<p id="playerName">Kim DickHead, FIGHT ! </p>`;
+                document.getElementById('playerName').innerHTML = `<p id="playerName">Kim, FIGHT! </p>`;
                 modaleJ1.style.display="block";
             } else{
-                document.getElementById('playerName').innerHTML = `<p id="playerName">Marine asshole, FIGHT ! </p>`;
+                document.getElementById('playerName').innerHTML = `<p id="playerName">Marine, FIGHT ! </p>`;
                 modaleJ1.style.display="block";
             }
             
@@ -112,13 +112,6 @@
         function closeModaleJ1 (){
          let modaleJ1Close = document.getElementById('modal1');
          modaleJ1Close.style.display="none";
-        }
-
-        function myFunctionJ1() {
-             alert("Joueur 1, A toi de jouer !");
-            }
-        function myFunctionJ2() {
-            alert("Joueur 2, A toi de jouer !");
         }
 
         function shuffle(frontCards) 
