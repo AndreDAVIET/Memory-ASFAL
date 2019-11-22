@@ -16,7 +16,7 @@ class Dot {
      */
     render() {
         return `
-            <img src="Img/level2.png";
+            <img src="Img/star.png";
                 id="dot-${this.index}";
                  class="dot"
                  style="width: ${this.size}px; 
