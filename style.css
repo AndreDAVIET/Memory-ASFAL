@@ -142,16 +142,17 @@ justify-content: space-evenly;
 margin-top: 10%;
 }
 
-#kimIndex{
-    width: 19%;
+#player2index{
+    width: 250px;
+    height: auto;
     border: black solid;
     border-radius: 15%;
     background-color: #92D7E6;
-
 }
 
-#marineIndex{
-    width: 17%;
+#player1index{
+    width: 250px;
+    height: auto;
     border: black solid;
     border-radius: 15%;
     padding-top: 3.5%;
@@ -176,7 +177,7 @@ margin-top: 10%;
     height: 120px;
     width: 120px;
     border-radius: 50%;
-    cursor:url("middle.png"), auto; 
+    cursor:pointer; 
 }
 
 .imgFinales{ 
@@ -209,5 +210,8 @@ margin-top: 10%;
     }
 .dot {
     position: absolute;
+}
 
+img{     
+    cursor: pointer;
 }
